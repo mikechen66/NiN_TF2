@@ -4,12 +4,22 @@
 # nin_rec.py
 
 """
+NIN(Network in Network) is the creative DNN model in which GAN(Global Averag Pooling) 
+is adpted to elimitate the large quantity of parameters. It deals with 10 label classes.  
+In contrast, AlexNet deep learning structure is a combination of CNN+FC that incurs a 
+huge RAM occupation. CNN is responsible for extracting features, and FC is responsible 
+for feature classification. NIN uses mlpconv and GAP to organicall combine the two parts 
+of CNN and streamline FC with making it more interpretable. 
+
 The script realizes the stack of the layers with the complete recursive function 
 style. It is better to define an outer function to include the common arguments 
 and return "layer", the name of inner function of layer(). And then define an 
 inner function that is recursively called by get_mode(). Otherwise, it is necessary 
 to include the formal argument b1,b2,b3 in statements of nin_block() within the 
 function defintion of get_model. 
+
+Reference:
+https://arxiv.org/pdf/1312.4400.pdf
 """
 
 
