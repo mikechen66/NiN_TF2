@@ -40,7 +40,7 @@ def nin_block(x, kernel, levels, strides):
 def get_model(img_rows, img_cols):
 
     # Input() initizate a 3-D shape(w,h,c) into a 4-D tensor(b,w,h,c). 
-    img = Input(shape=(img_rows, img_cols, 1))
+    img = Input(shape=(img_rows, img_cols, 3))
     b1 = nin_block(img, kernel=(5,5), levels=[192,160,96], strides=(1,1))
     b1 = MaxPooling2D(pool_size=(3,3), strides=(2,2))(b1)
     b1 = Dropout(0.5)(b1)
@@ -61,6 +61,6 @@ def get_model(img_rows, img_cols):
 
 if __name__ == '__main__':
 
-    model = get_model(28, 28)
+    model = get_model(227, 227)
 
     model.summary()
