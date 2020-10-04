@@ -1,4 +1,4 @@
-# keras_nin_tf2
+# NiN_TF2
 Build the script based on Keras 2.4.3 and TensorFlow 2.2
 
 NIN(Network in Network) is the creative DNN model in which GAN(Global Averag Pooling) is adpted to elimitate the 
